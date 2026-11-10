@@ -1,0 +1,42 @@
+/* Hallmark · shape: ledger of 14 days · genre: modern-minimal · theme: custom · job: book · idea: "Чотирнадцять днів, пораховані до години" · vibe: "чесно пораховано, спокійно, тепло, по-людськи"
+ * paper: #FFFFFF · accent: #F07C2B · display: Geologica · body: IBM Plex Sans · hero: H1 і ціна над стрічкою 14 днів, кожен день — 4 помаранчеві години з 24 · nav: липка шапка з якорями й телефоном, на телефоні нижня панель дзвінка · footer: білий, три колонки практичних даних · imagery: client photos · signature: стрічка 14 днів з сумою 52 900 грн
+ * axes: light/geometric-sans/chromatic-orange · posture: committed · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark waivers: 7b pure white = утверджена концепція (paper #FFFFFF); 23 акцент ~9% = стрічка 14 днів є знаком концепції; 77 = контакти: текст і дії без декоративного візуалу, за концепцією */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V3 · weakest: V, фото клієнта недоступні (сайт віддає 403): замість них типографіка, стрічка 14 днів і підписані місця під фото */
+/* Client design tokens from design/concept.md (veon-concept). */
+:root {
+  --color-bg: #FFFFFF;
+  --color-bg-alt: #EEF1F5;
+  --color-text: #13284C;
+  --color-text-2: #4A5874;
+  --color-accent: #F07C2B;
+  --color-accent-hover: #F59A55;
+  --color-accent-text: #B4531A;
+  --color-care: #D3DBE7;
+  --color-line: #D3DBE7;
+  --color-on-dark: #FFFFFF;
+  --color-accent-ink: #13284C;
+  --color-hover-dark: #FFFFFF1F;
+  --color-line-dark: #FFFFFF40;
+  --logo-yellow: #F2B91F;
+  --logo-green: #4CA64C;
+  --logo-grey: #555B63;
+  --font-display: "Geologica", "Geologica Fallback", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", "Plex Fallback", system-ui, sans-serif;
+  --radius: 4px;
+  --radius-btn: 6px;
+  --ease-out: cubic-bezier(.2, .7, .2, 1);
+  --dur: 600ms;
+  --space: clamp(20px, 5vw, 64px);
+  --container: 1200px;
+  --gutter: 24px;
+  --section-y: clamp(64px, 8vw, 128px);
+  --header-h: 60px;
+  --fs-s: 15px;
+  --fs-body: 17px;
+  --fs-3: 23px;
+  --fs-h2: clamp(30px, 2.4vw + 18px, 48px);
+  --fs-h1: clamp(34px, 3.2vw + 14px, 64px);
+  --fs-price: clamp(56px, 6vw, 104px);
+}
+@media (min-width: 768px) { :root { --header-h: 72px; --fs-body: 18px; } }

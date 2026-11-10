@@ -1,0 +1,33 @@
+---
+import Logo from "./Logo.astro";
+import Icon from "./Icon.astro";
+import FutureLink from "./FutureLink.astro";
+const nav = [["#day", "Що входить"], ["#work", "Над чим працюємо"], ["#programme", "Програма"], ["#team", "Команда"], ["#place", "Де ми"], ["#contact", "Контакти"]];
+---
+<header class="site-header">
+  <div class="container site-header__in">
+    <Logo />
+    <nav class="nav" aria-label="Розділи сторінки">
+      {nav.map(([h, t]) => <a class="u" href={h}>{t}</a>)}
+    </nav>
+    <div class="site-header__right">
+      <FutureLink note="Розділ у розробці" class="lang u-dotted">RU</FutureLink>
+      <a class="tel" href="tel:+380673536406">+38 067 353 64 06</a>
+      <a class="btn btn--accent btn--header" href="tel:+380673536406"><Icon name="phone" />Зателефонувати</a>
+      <a class="icon-btn" href="tel:+380673536406" aria-label="Зателефонувати: +38 067 353 64 06"><Icon name="phone" /></a>
+      <details class="menu">
+        <summary><span>Меню</span></summary>
+        <div class="menu__panel">
+          {nav.map(([h, t]) => <a href={h}>{t}</a>)}
+          <div class="menu__future">
+            <FutureLink note="Розділ у розробці">Амбулаторно</FutureLink>
+            <FutureLink note="Розділ у розробці">Як потрапити на реабілітацію</FutureLink>
+            <FutureLink note="Розділ у розробці">Відгуки</FutureLink>
+            <FutureLink note="Розділ у розробці">Блог</FutureLink>
+            <FutureLink note="Розділ у розробці">RU</FutureLink>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>

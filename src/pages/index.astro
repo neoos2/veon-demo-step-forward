@@ -1,0 +1,168 @@
+---
+import Base from "../layouts/Base.astro";
+import Section from "../components/Section.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import DayStrip from "../components/DayStrip.astro";
+import Icon from "../components/Icon.astro";
+import FutureLink from "../components/FutureLink.astro";
+
+const MAP = "https://www.google.com/maps/search/?api=1&query=%D0%A1%D0%BE%D1%84%D1%96%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%91%D0%BE%D1%80%D1%89%D0%B0%D0%B3%D1%96%D0%B2%D0%BA%D0%B0+%D0%BF%D1%80%D0%BE%D1%81%D0%BF.+%D0%93%D0%B5%D1%80%D0%BE%D1%97%D0%B2+%D0%9D%D0%B5%D0%B1%D0%B5%D1%81%D0%BD%D0%BE%D1%97+%D0%A1%D0%BE%D1%82%D0%BD%D1%96+18%2F1";
+const VIBER = "viber://chat?number=%2B380673536406";
+const WA = "https://wa.me/380673536406";
+const directions = [
+  "Рухи в кінцівках і дрібна моторика",
+  "Увага, пам'ять, когнітивні функції",
+  "Мовлення",
+  "Рівновага й координація",
+  "Мобільність і ходьба",
+  "Психологічна підтримка",
+  "Самостійність і самообслуговування",
+  "Навчання родичів",
+];
+const include = [
+  ["Індивідуальні заняття", "Фізична терапія та ерготерапія: 4 години щодня.", true],
+  ["Цілодобовий догляд", "Гігієна, прийом їжі, переміщення.", false],
+  ["Проживання", "Функціональне ліжко, приліжкова тумба зі столиком, приліжковий туалет, кнопка виклику, кондиціонер, телевізор, Wi‑Fi.", false],
+  ["Харчування", "Входить у вартість пакета.", false],
+  ["Лікар ФРМ", "Супроводжує програму.", false],
+];
+---
+<Base lang="uk" title="Реабілітація після інсульту в Києві — стаціонар «Фенікс», 52 900 грн за 14 днів" description="Стаціонар після інсульту на межі з Києвом: 4 години індивідуальних занять щодня, цілодобовий догляд, проживання й харчування. 52 900 грн за 14 днів. Ліцензія МОЗ №3239/21/М. Тел. +38 067 353 64 06.">
+  <Header slot="header" />
+
+  <Section id="hero" rec="R-UX-001" class="hero" label="Перший екран">
+    <div class="container hero__grid">
+      <h1 class="hero__h1">Реабілітація після інсульту в стаціонарі: 14 днів, по 4 години занять щодня</h1>
+            <DayStrip class="hero__strip" />
+      <div class="hero__price">
+        <p class="price"><span class="price__n">52 900</span> <span class="price__u">грн</span><span class="price__cap">за 14 днів: проживання, харчування, догляд і заняття<span class="price__note">Логопед — окремо, 600 грн за заняття</span></span></p>
+      </div>
+      <div class="hero__actions">
+        <a class="btn btn--accent btn--lg" href="tel:+380673536406"><Icon name="phone" /><span>Зателефонувати<span class="num">: +38 067 353 64 06</span></span></a>
+        <div class="msgr">
+          <a class="btn btn--outline" href={VIBER}><Icon name="viber" /><span>Написати у Viber</span></a>
+          <a class="btn btn--outline" href={WA} target="_blank" rel="noopener noreferrer"><Icon name="whatsapp" /><span>WhatsApp</span></a>
+        </div>
+      </div>
+      <p class="hero__trust"><span>Медична ліцензія №3239/21/М</span><span>Софіївська Борщагівка, межа з Києвом</span><span>Стаціонар працює цілодобово</span></p>
+    </div>
+  </Section>
+
+  <Section id="day" rec="R-UX-002" class="day on-dark" label="Що входить у кожен день">
+    <div class="container">
+      <h2 class="h2" data-reveal>Що входить у кожен день</h2>
+      <p class="day__lead" data-reveal>Доба — це 24 години. Чотири з них — індивідуальні заняття, решта — догляд, проживання й харчування.</p>
+      <div class="daybar" data-clip="x">
+        <div class="daybar__bar" role="img" aria-label="Доба: 4 години індивідуальних занять і 20 годин догляду, проживання та харчування">
+          <span class="daybar__t"></span><span class="daybar__c"></span>
+        </div>
+        <div class="daybar__labels">
+          <p class="daybar__l daybar__l--t"><b>4 год</b> індивідуальні заняття</p>
+          <p class="daybar__l"><b>20 год</b> догляд, проживання, харчування</p>
+        </div>
+      </div>
+      <div class="day__grid">
+        <ul class="incl">
+          {include.map(([h, t, hl]) => (
+            <li class:list={["incl__i", hl && "incl__i--hl"]}><h3>{h}</h3><p>{t}</p></li>
+          ))}
+        </ul>
+        <div class="day__side">
+          <div class="extra">
+            <h3>Оплачується окремо</h3>
+            <p>Логопед — 600 грн за заняття.</p>
+            <p>Психолог — за потребою пацієнта.</p>
+          </div>
+          <div class="sum">
+            <p class="sum__n">52 900 <span>грн</span></p>
+            <p class="sum__c">за 14 днів, без прихованих платежів</p>
+            <a class="btn btn--accent btn--lg" href="tel:+380673536406"><Icon name="phone" />Зателефонувати</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <Section id="work" class="work" label="Над чим працюємо">
+    <div class="container work__grid">
+      <div class="work__intro">
+        <h2 class="h2" data-reveal>Над чим працюємо</h2>
+        <p data-reveal>Працюємо над рухом, ходьбою та самостійністю. Регулярно оцінюємо результати й коригуємо програму.</p>
+        <div class="gfx gfx--stat" data-clip="up"><p class="gfx__n">4<span> год</span></p><p class="gfx__c">індивідуальних занять щодня</p></div>
+      </div>
+      <ol class="dirs">
+        {directions.map((d, i) => (
+          <li class="dirs__i" data-clip="up" style={`--d:${(i % 2) * 80}ms`}><span class="dirs__n">{String(i + 1).padStart(2, "0")}</span><h3>{d}</h3></li>
+        ))}
+      </ol>
+    </div>
+  </Section>
+
+  <Section id="programme" rec="R-UX-002" class="prog" label="Як будується програма">
+    <div class="container">
+      <h2 class="h2" data-reveal>Як будується програма</h2>
+      <ol class="steps">
+        <li><span class="steps__n">1</span><h3>Оцінювання</h3><p>Оцінюємо стан, потреби й цілі пацієнта.</p></li>
+        <li><span class="steps__n">2</span><h3>Індивідуальна програма</h3><p>Складаємо програму під цього пацієнта.</p></li>
+        <li class="steps__loop"><span class="steps__n">3</span><h3>Заняття й коригування</h3><p>Заняття чергуються з регулярним оцінюванням: програму коригуємо за результатами.</p></li>
+      </ol>
+      <div class="prog__more">
+        <p>За потреби програму можна продовжити.</p>
+        <p>Також приймаємо після ЧМТ, при хворобі Паркінсона й Альцгеймера — можливість прийому визначаємо індивідуально.</p>
+        <p class="prog__links">
+          <FutureLink note="Розділ у розробці" class="u-dotted">Реабілітація після ендопротезування суглобів</FutureLink>
+          <FutureLink note="Розділ у розробці" class="u-dotted">Амбулаторні заняття — 600 грн</FutureLink>
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <Section id="team" rec="R-UX-002" class="team" label="Хто працює з пацієнтом">
+    <div class="container">
+      <h2 class="h2" data-reveal>Хто працює з пацієнтом</h2>
+      <ul class="roles">
+        <li>Лікар фізичної та реабілітаційної медицини</li>
+        <li>Фізичні терапевти</li>
+        <li>Ерготерапевт</li>
+        <li>Фахівці з догляду</li>
+        <li class="roles__opt">За потреби: логопед, психолог, ортезист</li>
+      </ul>
+      <div class="gfx gfx--hours" data-clip="up"><div class="gfx__cells" role="img" aria-label="24 години на добу"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p class="gfx__c">Цілодобовий догляд: 24 години на добу</p></div>
+      <p><FutureLink note="Розділ у розробці" class="u-dotted">Біографії команди</FutureLink></p>
+    </div>
+  </Section>
+
+  <Section id="place" class="place" label="Де це">
+    <div class="container place__grid">
+      <div class="place__text">
+        <h2 class="h2" data-reveal>Де це</h2>
+        <p class="place__addr">Софіївська Борщагівка, просп. Героїв Небесної Сотні, 18/1, ЖК «Затишний квартал»</p>
+        <p>На межі з Києвом. Стаціонар працює цілодобово.</p>
+        <p><a class="btn btn--outline btn--dark" href={MAP} target="_blank" rel="noopener noreferrer"><Icon name="map" />Відкрити на карті</a></p>
+        <p><FutureLink note="Розділ у розробці" class="u-dotted">Як потрапити на реабілітацію</FutureLink></p>
+      </div>
+      <div class="gfx gfx--stat" data-clip="up"><p class="gfx__n gfx__n--s">18/1</p><p class="gfx__c">просп. Героїв Небесної Сотні, на межі з Києвом</p></div>
+    </div>
+  </Section>
+
+  <Section id="contact" class="contact on-dark" label="Контакти">
+    <div class="container">
+      <h2 class="h2">Розкажіть нам про стан пацієнта</h2>
+      <p class="contact__lead">Консультація безкоштовна. Стаціонар працює цілодобово.</p>
+      <p class="contact__tel"><a href="tel:+380673536406">+38 067 353 64 06</a></p>
+      <div class="contact__actions">
+        <a class="btn btn--accent btn--lg" href="tel:+380673536406"><Icon name="phone" />Зателефонувати</a>
+        <a class="btn btn--outline-light" href={VIBER}><Icon name="viber" />Viber</a>
+        <a class="btn btn--outline-light" href={WA} target="_blank" rel="noopener noreferrer"><Icon name="whatsapp" />WhatsApp</a>
+        <a class="btn btn--outline-light" href="mailto:kalinkin.pt@gmail.com"><Icon name="mail" />kalinkin.pt@gmail.com</a>
+      </div>
+      <div class="contact__strip">
+        <DayStrip compact legend={false} />
+        <p class="contact__sum"><b>52 900 грн</b> за 14 днів, по 4 години занять щодня</p>
+      </div>
+    </div>
+  </Section>
+
+  <Footer slot="footer" />
+</Base>

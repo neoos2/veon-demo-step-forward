@@ -1,0 +1,33 @@
+---
+import Logo from "./Logo.astro";
+import FutureLink from "./FutureLink.astro";
+import Icon from "./Icon.astro";
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div>
+        <Logo />
+        <p class="site-footer__h">Контакти</p>
+        <p><a class="u" href="tel:+380673536406">+38 067 353 64 06</a></p>
+        <p><a class="u" href="mailto:kalinkin.pt@gmail.com">kalinkin.pt@gmail.com</a></p>
+      </div>
+      <div>
+        <p class="site-footer__h">Адреса</p>
+        <p>Софіївська Борщагівка, просп. Героїв Небесної Сотні, 18/1, ЖК «Затишний квартал»</p>
+        <p><a class="u" href="https://www.google.com/maps/search/?api=1&query=%D0%A1%D0%BE%D1%84%D1%96%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%91%D0%BE%D1%80%D1%89%D0%B0%D0%B3%D1%96%D0%B2%D0%BA%D0%B0+%D0%BF%D1%80%D0%BE%D1%81%D0%BF.+%D0%93%D0%B5%D1%80%D0%BE%D1%97%D0%B2+%D0%9D%D0%B5%D0%B1%D0%B5%D1%81%D0%BD%D0%BE%D1%97+%D0%A1%D0%BE%D1%82%D0%BD%D1%96+18%2F1" target="_blank" rel="noopener noreferrer">Відкрити на карті</a></p>
+      </div>
+      <div>
+        <p class="site-footer__h">Ліцензія і соцмережі</p>
+        <p>Медична ліцензія №3239/21/М</p>
+        <p><a class="u" href="https://www.facebook.com/reabilitacia.posle.insulta.kiev/" target="_blank" rel="noopener noreferrer">Facebook</a></p>
+        <p class="site-footer__future"><FutureLink note="Розділ у розробці" class="u-dotted">Амбулаторно</FutureLink> <FutureLink note="Розділ у розробці" class="u-dotted">Відгуки</FutureLink> <FutureLink note="Розділ у розробці" class="u-dotted">Блог</FutureLink></p>
+      </div>
+    </div>
+    <p class="site-footer__copy">© Центр фізичної реабілітації «Фенікс»</p>
+  </div>
+</footer>
+<div class="callbar" role="region" aria-label="Швидкий зв'язок">
+  <a class="btn btn--accent" href="tel:+380673536406"><Icon name="phone" />Зателефонувати</a>
+  <a class="btn btn--outline" href="viber://chat?number=%2B380673536406"><Icon name="viber" />Viber</a>
+</div>

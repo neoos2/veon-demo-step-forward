@@ -1,0 +1,23 @@
+---
+// Signature: 14 days, each = 24 h, of which 4 h of individual sessions (orange). Visible legend + aria-label carry the meaning.
+interface Props { days?: number; hoursTherapy?: number; compact?: boolean; legend?: boolean; class?: string; }
+const { days = 14, hoursTherapy = 4, compact = false, legend = true, class: cls } = Astro.props;
+const care = 24 - hoursTherapy;
+const label = `Стрічка ${days} днів: щодня ${hoursTherapy} години індивідуальних занять і ${care} годин догляду, проживання та харчування`;
+---
+<figure class:list={["strip", compact && "strip--compact", cls]}>
+  <div class="strip__bars" role="img" aria-label={label} style={`--hours-t:${hoursTherapy}; --hours-c:${care}`}>
+    {Array.from({ length: days }, (_, i) => (
+      <div class="strip__day" style={`--i:${i}`}>
+        <span class="strip__n">{compact ? i + 1 : `День ${i + 1}`}</span>
+        <span class="strip__col"><span class="strip__care"></span><span class="strip__t"></span></span>
+      </div>
+    ))}
+  </div>
+  {legend && (
+    <figcaption class="strip__legend">
+      <span><i class="sw sw--t"></i>{hoursTherapy} год занять щодня</span>
+      <span><i class="sw sw--c"></i>{care} год: догляд, проживання, харчування</span>
+    </figcaption>
+  )}
+</figure>
